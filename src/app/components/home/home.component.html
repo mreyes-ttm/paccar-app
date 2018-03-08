@@ -1,0 +1,30 @@
+<mat-toolbar color="primary">
+  <span>Paccar App</span>
+</mat-toolbar>
+
+<div class="container"
+     fxLayout
+     fxLayout.xs="column"
+     fxLayoutAlign="center"
+     fxLayoutGap="10px"
+     fxLayoutGap.xs="0" style="margin-top: 50px;">
+  <div class="item item-1" fxFlex="30%"></div>
+  <div class="item item-2" fxFlex="30%" fxFlexOrder="3"></div>
+  <div class="item item-3" fxFlex>
+  	<h3 style='font-family: Roboto,"Helvetica Neue",sans-serif;'>You are logged in!</h3>
+  	<mat-card style="margin-top: 50px;" *ngIf="showTokenContent">
+		  <mat-card-title color="primary">
+			Authorization Code Grant Token
+		  </mat-card-title>
+		  <mat-card-content>
+			  <textarea cols="40" style="min-width: 600px; min-height: 400px;">
+			    {{ tokenContent }}
+			  </textarea>
+		  </mat-card-content>
+	  </mat-card>
+    <br/>
+    <div>
+      <button mat-raised-button (click)="logout()" color="primary"> Logout</button>
+    </div>
+  </div>
+</div>
